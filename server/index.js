@@ -11,12 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "uploads")));
 
-var URLstring =
-  "mongodb+srv://devit:KuZ74TZWx5owXlru@cluster0.djpfo.mongodb.net/image-gallery?retryWrites=true&w=majority";
+var URIstring = "your-mongodb-connection-string";
 
 app.use("/galleries", require("./routes/gallery"));
 
-mongoose.connect(URLstring, {
+mongoose.connect(URIstring, {
   useFindAndModify: false,
   useNewUrlParser: true,
   useUnifiedTopology: true,
